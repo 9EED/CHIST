@@ -1,0 +1,93 @@
+body{
+    background-color: #050505;
+    color: #EEE;
+    font-family: monospace;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 100vh;
+    width: 100vw;
+}
+#container{
+    background-color: #2e2652;
+    font-size: 0px;
+    width: 80vw;
+    height: 90vh;
+}
+canvas {
+    background-color: #151515;
+}
+#components{
+    background-color: #3446a1;
+    width: 20vw;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
+}
+#tools{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    user-select: none;
+}
+.tool{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #2d3d91;
+    padding: 5px;
+    width: calc( 33% - 15px);
+    cursor: pointer;
+}
+.tool-selected{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #283781;
+    padding: 5px;
+    width: calc( 33% - 15px);
+    cursor: pointer;
+}
+#toolsSelector{
+    background-color: #1d285f;
+    width: 100%;
+    text-align: center;
+}
+.componentSelector{
+    background: #2d3d91;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    flex-wrap: wrap;
+    user-select: none;
+    cursor: pointer;
+}
+.componentSelector div{
+    display: flex;
+    justify-content: space-evenly;
+}
+.componentName{
+    background-color: #1d285f;
+    font-size: 20px;
+    text-align: center;
+    padding: 3px 0px;
+}
+.componentFormula{
+    text-align: center;
+}
+#formula{
+    background-color: #4d9f6a;
+    height: 10vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
