@@ -245,7 +245,7 @@ function loop(){
     formula.innerHTML = ''
     for ( let i in gloabl ){
         formula.innerHTML += i
-        formula.innerHTML += gloabl[i] > 1 ? gloabl[i] : ''
+        formula.innerHTML += gloabl[i] > 1 ? `<span style="font-size:17px;margin-top:4px">${gloabl[i]}</span>` : ''
     }
     let freeBonds = atomsArr.some( i => i.some( a => a.bonds));
     formula.style = freeBonds ? 'background-color: #c33;' : 'background-color: #395;';
@@ -253,7 +253,6 @@ function loop(){
     // lines
     for ( let i = 0 ; i < bondsArr.length ; i++ ){
         for ( let a = 0 ; a < bondsArr[i].length ; a++ ){
-            if (!( a % 2 != 0 | i % 2 != 0 )|!( a % 2 != 1 | i % 2 != 1 )) continue
             switch (bondsArr[i][a]){
                 case 0:{
                     //c.fillRect( i*res*0.5+xShift-1, a*res*0.5+yShift-1, 2, 2)
@@ -301,7 +300,6 @@ function loop(){
     hue += 2;
     cursorCircle.fillStyle = `hsl(${hue}, 50%, 50%)`;
     cursorCircle.srokeStyle = `hsl(${hue}, 50%, 50%)`;
-    //cursorCircle.render();
 };
 
 let formula = $('formula');
@@ -321,7 +319,9 @@ for ( let i = 0 ; i < size*2-1 ; i ++){
 };
 atomsArr[2][2] = new Atom('C');
 atomsArr[3][2] = new Atom('O');
-atomsArr[2][1] = new Atom('O');
+atomsArr[2][3] = new Atom('O');
+bondsArr[5][4] = 2
+bondsArr[4][5] = 5
 
 $('horizontalTool').addEventListener( 'click', ()=>{
     tool = 'horizontal'
@@ -371,6 +371,7 @@ canvas.addEventListener( 'click', (event)=>{
 for ( let i in atoms ){
     $(atoms[i].name).addEventListener( 'click', ()=>{
         selected = i
+        tool = 'atom'
     })
 }
 
